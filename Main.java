@@ -72,7 +72,7 @@ public class Main
 			System.out.println("");
 	
 		
-			//two.setList("Math", 9922, "Sping 2011", 3, 'd');
+			two.setList("Math", 9922, "Sping 2011", 3, 'd');
 			//two.setList("Math", 9922, "Fall 2011", 3, 'A');
 			//two.setList("Math", 9922, "Sping 2011", 3, 'D');
 			//two.setList("Math", 9922, "Sping 2011", 4, 'd');
