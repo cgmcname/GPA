@@ -11,8 +11,10 @@ public class Student
 {
 	private String name;
 	private int id = 0;
+	private int index = 0;
 	private double gradeAvg;
 	private double hourTotal;
+	private boolean check = false;
 	
 	static private int members = 0;
 	
@@ -71,23 +73,35 @@ public class Student
 		
 		courseLoad.forEach(Classes -> {
 			
-			System.out.println(Classes.getCourseNumber());
-			System.out.println(courseNumber);
+			//System.out.println(Classes.getCourseNumber());
+			//System.out.println(courseNumber);
+			
 			if (Classes.getCourseNumber() == courseNumber)
 			{
 				System.out.println(courseLoad.indexOf(Classes));
-				courseLoad.remove(courseLoad.indexOf(Classes));
+				index = courseLoad.indexOf(Classes);
+				check = true;
 			}
-			
+			 
         });
 		
+		if (check == true)
+		{
+		deleteClass(index);
+		}
 		
+		check = false;
+	}
+	
+	void deleteClass(int i)
+	{
+		courseLoad.remove(i);
 	}
 	
 	void showClasses()
 	{
 		courseLoad.forEach(Classes -> {
-            System.out.println("Name : " + Classes.getCourseName() + ", Semester : " + Classes.getCourseSemseter());
+            System.out.println("Name : " + Classes.getCourseName() + ", Course Number : " + Classes.getCourseNumber());
         });
 	}
 	
