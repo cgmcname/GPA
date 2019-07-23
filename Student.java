@@ -63,8 +63,6 @@ public class Student
 	void setList(String n, int cNumber, String sem, int cHours, char g) 
 	{
 		courseLoad.add(new Classes(n, cNumber, sem, cHours, Character.toUpperCase(g)));
-		
-		
 	}
 	
 	void reduceList(int courseNumber)
@@ -73,12 +71,11 @@ public class Student
 		
 		courseLoad.forEach(Classes -> {
 			
-			//System.out.println(Classes.getCourseNumber());
-			//System.out.println(courseNumber);
+			
 			
 			if (Classes.getCourseNumber() == courseNumber)
 			{
-				System.out.println(courseLoad.indexOf(Classes));
+				//System.out.println(courseLoad.indexOf(Classes));
 				index = courseLoad.indexOf(Classes);
 				check = true;
 			}
@@ -87,16 +84,13 @@ public class Student
 		
 		if (check == true)
 		{
-		deleteClass(index);
+			courseLoad.remove(index);
 		}
 		
 		check = false;
 	}
 	
-	void deleteClass(int i)
-	{
-		courseLoad.remove(i);
-	}
+
 	
 	void showClasses()
 	{
