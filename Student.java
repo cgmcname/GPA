@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.*;
+import java.util.Iterator;
 
 public class Student 
 {
@@ -63,11 +64,26 @@ public class Student
 		
 		
 	}
-	//double getClassGradePoint()
-	//{
-	//	return test.getGradePoint();
-	//}
-
+	
+	void reduceList(int courseNumber)
+	{
+		
+		
+		courseLoad.forEach(Classes -> {
+			
+			System.out.println(Classes.getCourseNumber());
+			System.out.println(courseNumber);
+			if (Classes.getCourseNumber() == courseNumber)
+			{
+				System.out.println(courseLoad.indexOf(Classes));
+				courseLoad.remove(courseLoad.indexOf(Classes));
+			}
+			
+        });
+		
+		
+	}
+	
 	void showClasses()
 	{
 		courseLoad.forEach(Classes -> {
